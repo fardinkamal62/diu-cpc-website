@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function Navigation() {
@@ -40,10 +41,17 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group relative">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-blue via-blue-500 to-light-blue flex items-center justify-center shadow-lg shadow-primary-blue/30 group-hover:shadow-primary-blue/50 group-hover:scale-110 transition-all duration-300 relative overflow-hidden">
+            <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center shadow-lg shadow-primary-blue/30 group-hover:shadow-primary-blue/50 group-hover:scale-110 transition-all duration-300 relative overflow-hidden">
               {/* Animated shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <span className="text-2xl font-bold relative z-10">CPC</span>
+              <Image
+                src="/cpc-logo.png"
+                alt="DIU CPC Logo"
+                width={48}
+                height={48}
+                className="relative z-10 object-contain"
+                priority
+              />
             </div>
             <div className="hidden md:block">
               <h1 className="text-xl font-bold text-white drop-shadow-lg">DIU CPC</h1>

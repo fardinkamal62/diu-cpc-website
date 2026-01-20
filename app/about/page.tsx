@@ -1,11 +1,11 @@
+import Image from 'next/image';
 import GlassCard from '@/components/GlassCard';
 import GlassButton from '@/components/GlassButton';
 
 export default function AboutPage() {
   const stats = [
     { icon: '👥', value: '500+', label: 'Active Members' },
-    { icon: '🏆', value: '50+', label: 'Events Hosted' },
-    { icon: '💻', value: '100+', label: 'Projects Built' },
+    { icon: '🏆', value: '20+', label: 'Events Hosted' },
     { icon: '🎯', value: '20+', label: 'Workshops' },
   ];
 
@@ -37,8 +37,15 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="animate-fade-in">
         <GlassCard enhanced className="text-center py-16">
-          <div className="inline-block p-6 rounded-3xl blue-gradient-enhanced mb-8 shadow-xl">
-            <span className="text-6xl">💻</span>
+          <div className="inline-block p-6 rounded-3xl mb-2">
+            <Image
+              src="/cpc-logo.png"
+              alt="DIU CPC Logo"
+              width={90}
+              height={90}
+              className="object-contain"
+              priority
+            />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             About DIU CPC
@@ -52,7 +59,7 @@ export default function AboutPage() {
 
       {/* Stats Section */}
       <section className="animate-slide-up">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {stats.map((stat, index) => (
             <GlassCard key={index} enhanced className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 rounded-2xl blue-gradient-enhanced flex items-center justify-center shadow-lg">

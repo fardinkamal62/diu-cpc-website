@@ -1,6 +1,7 @@
 import GlassCard from '@/components/GlassCard';
 import GlassButton from '@/components/GlassButton';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   const stats = [
@@ -90,8 +91,15 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl mx-auto text-center animate-fade-in">
             {/* Logo/Icon */}
-            <div className="inline-block p-8 rounded-3xl bg-gradient-to-br from-primary-blue via-blue-500 to-light-blue mb-8 shadow-2xl shadow-primary-blue/30 animate-scale-in">
-              <span className="text-7xl">💻</span>
+            <div className="inline-block p-2 rounded-3xl bg-white/10 backdrop-blur-sm mb-8 shadow-2xl shadow-primary-blue/30 animate-scale-in">
+              <Image
+                src="/cpc-logo.png"
+                alt="DIU CPC Logo"
+                width={90}
+                height={90}
+                className="object-contain"
+                priority
+              />
             </div>
 
             {/* Main Heading */}

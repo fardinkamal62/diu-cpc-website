@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,7 +10,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">DIU CPC</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/cpc-logo.png"
+                alt="DIU CPC Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+              <h3 className="text-xl font-bold text-white">DIU CPC</h3>
+            </div>
             <p className="text-white/70 text-sm leading-relaxed">
               Dhaka International University Computer Programming Club - 
               Empowering students through coding, innovation, and technology.
