@@ -1,32 +1,33 @@
 import Image from 'next/image';
 import GlassCard from '@/components/GlassCard';
 import GlassButton from '@/components/GlassButton';
+import { Users, Trophy, Target, Rocket, Handshake, Library, Goal, Telescope, GraduationCap, Briefcase, Laptop, Lightbulb } from 'lucide-react';
 
 export default function AboutPage() {
   const stats = [
-    { icon: '👥', value: '500+', label: 'Active Members' },
-    { icon: '🏆', value: '20+', label: 'Events Hosted' },
-    { icon: '🎯', value: '20+', label: 'Workshops' },
+    { icon: <Users className="w-8 h-8 text-white" />, value: '500+', label: 'Active Members' },
+    { icon: <Trophy className="w-8 h-8 text-white" />, value: '20+', label: 'Events Hosted' },
+    { icon: <Target className="w-8 h-8 text-white" />, value: '20+', label: 'Workshops' },
   ];
 
   const values = [
     {
-      icon: '🚀',
+      icon: <Rocket className="w-6 h-6 text-white" />,
       title: 'Innovation',
       description: 'We encourage creative thinking and innovative solutions to real-world problems.',
     },
     {
-      icon: '🤝',
+      icon: <Handshake className="w-6 h-6 text-white" />,
       title: 'Collaboration',
       description: 'Working together to achieve common goals and learn from each other.',
     },
     {
-      icon: '📚',
+      icon: <Library className="w-6 h-6 text-white" />,
       title: 'Learning',
       description: 'Continuous learning and skill development through workshops and projects.',
     },
     {
-      icon: '🎯',
+      icon: <Goal className="w-6 h-6 text-white" />,
       title: 'Excellence',
       description: 'Striving for excellence in everything we do, from coding to competitions.',
     },
@@ -36,24 +37,28 @@ export default function AboutPage() {
     <div className="container mx-auto px-4 py-8 space-y-12">
       {/* Hero Section */}
       <section className="animate-fade-in">
-        <GlassCard enhanced className="text-center py-16">
-          <div className="inline-block p-6 rounded-3xl mb-2">
-            <Image
-              src="/cpc-logo.png"
-              alt="DIU CPC Logo"
-              width={90}
-              height={90}
-              className="object-contain"
-              priority
-            />
+        <GlassCard enhanced className="py-12">
+          <div className="flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-8">
+            <div className="flex-shrink-0">
+              <Image
+                src="/cpc-logo.png"
+                alt="DIU CPC Logo"
+                width={100}
+                height={100}
+                className="object-contain rounded-3xl bg-white/10 p-3"
+                priority
+              />
+            </div>
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                About DIU CPC
+              </h1>
+              <p className="text-lg text-white/80 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+                Fostering a community of passionate programmers and tech enthusiasts at
+                Dhaka International University.
+              </p>
+            </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            About DIU CPC
-          </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            The Computer Programming Club at Dhaka International University is dedicated
-            to fostering a community of passionate programmers and technology enthusiasts.
-          </p>
         </GlassCard>
       </section>
 
@@ -63,7 +68,7 @@ export default function AboutPage() {
           {stats.map((stat, index) => (
             <GlassCard key={index} enhanced className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 rounded-2xl blue-gradient-enhanced flex items-center justify-center shadow-lg">
-                <span className="text-3xl">{stat.icon}</span>
+                {stat.icon}
               </div>
               <h3 className="text-3xl font-bold text-white mb-2">{stat.value}</h3>
               <p className="text-white/70 text-sm">{stat.label}</p>
@@ -77,7 +82,7 @@ export default function AboutPage() {
         <GlassCard enhanced>
           <div className="flex items-start gap-6">
             <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg flex-shrink-0">
-              <span className="text-4xl">🎯</span>
+              <Goal className="w-10 h-10 text-white" />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-white mb-4">Our Mission</h2>
@@ -98,7 +103,7 @@ export default function AboutPage() {
         <GlassCard enhanced>
           <div className="flex items-start gap-6">
             <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg flex-shrink-0">
-              <span className="text-4xl">🔭</span>
+              <Telescope className="w-10 h-10 text-white" />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-white mb-4">Our Vision</h2>
@@ -122,7 +127,7 @@ export default function AboutPage() {
             <GlassCard key={index} className="hover:scale-[1.02] transition-transform duration-300">
               <div className="flex items-start gap-4">
                 <div className="w-14 h-14 rounded-xl blue-gradient-enhanced flex items-center justify-center shadow-lg flex-shrink-0">
-                  <span className="text-2xl">{value.icon}</span>
+                  {value.icon}
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">{value.title}</h3>
@@ -141,7 +146,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <span className="text-2xl">🎓</span>
+                <GraduationCap className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-white font-semibold mb-1">Workshops & Training</h4>
                   <p className="text-white/70 text-sm">
@@ -150,7 +155,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-2xl">🏆</span>
+                <Trophy className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-white font-semibold mb-1">Competitions</h4>
                   <p className="text-white/70 text-sm">
@@ -159,7 +164,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-2xl">💼</span>
+                <Briefcase className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-white font-semibold mb-1">Career Development</h4>
                   <p className="text-white/70 text-sm">
@@ -170,7 +175,7 @@ export default function AboutPage() {
             </div>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <span className="text-2xl">🤝</span>
+                <Handshake className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-white font-semibold mb-1">Networking</h4>
                   <p className="text-white/70 text-sm">
@@ -179,7 +184,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-2xl">💻</span>
+                <Laptop className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-white font-semibold mb-1">Project Development</h4>
                   <p className="text-white/70 text-sm">
@@ -188,7 +193,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-2xl">📚</span>
+                <Library className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-white font-semibold mb-1">Resources</h4>
                   <p className="text-white/70 text-sm">
@@ -215,9 +220,9 @@ export default function AboutPage() {
             <GlassButton href="/membership" variant="blue" className="px-8 py-4">
               Become a Member
             </GlassButton>
-            <GlassButton href="/events" variant="outline" className="px-8 py-4">
-              View Events
-            </GlassButton>
+            {/*<GlassButton href="/events" variant="outline" className="px-8 py-4">*/}
+            {/*  View Events*/}
+            {/*</GlassButton>*/}
           </div>
         </GlassCard>
       </section>

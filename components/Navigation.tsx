@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { Home, Info, UserPlus, Menu, X } from 'lucide-react';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,11 +12,11 @@ export default function Navigation() {
   const pathname = usePathname();
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Events', path: '/events' },
-    { name: 'Committee', path: '/committee' },
-    { name: 'Become a Member', path: '/membership' },
+    { name: 'Home', path: '/', icon: <Home className="w-4 h-4" /> },
+    { name: 'About', path: '/about', icon: <Info className="w-4 h-4" /> },
+    // { name: 'Events', path: '/events' },
+    // { name: 'Committee', path: '/committee' },
+    { name: 'Become a Member', path: '/membership', icon: <UserPlus className="w-4 h-4" /> },
   ];
 
   const isActive = (path: string) => pathname === path;
@@ -36,7 +37,7 @@ export default function Navigation() {
     }`}>
       {/* Blue glow effect at the top */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary-blue/10 via-transparent to-transparent pointer-events-none" />
-      
+
       <div className="container mx-auto px-4 py-4 relative">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -65,7 +66,7 @@ export default function Navigation() {
               <Link
                 key={item.path}
                 href={item.path}
-                className={`px-5 py-2.5 rounded-xl font-medium transition-all duration-300 relative overflow-hidden ${
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all duration-300 relative overflow-hidden ${
                   isActive(item.path)
                     ? 'bg-gradient-to-r from-primary-blue to-blue-500 text-white shadow-lg shadow-primary-blue/30'
                     : 'text-white/80 hover:text-white hover:bg-white/10'
@@ -74,6 +75,7 @@ export default function Navigation() {
                 {isActive(item.path) && (
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
                 )}
+                {item.icon}
                 <span className="relative z-10">{item.name}</span>
               </Link>
             ))}
@@ -85,21 +87,7 @@ export default function Navigation() {
             className="lg:hidden bg-white/10 backdrop-blur-md hover:bg-white/20 p-2.5 rounded-xl transition-all duration-300 border border-white/20 hover:border-primary-blue/50 shadow-lg"
             aria-label="Toggle menu"
           >
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {isOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            {isOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
           </button>
         </div>
 
@@ -111,7 +99,7 @@ export default function Navigation() {
                 key={item.path}
                 href={item.path}
                 onClick={() => setIsOpen(false)}
-                className={`block px-5 py-3 rounded-xl font-medium transition-all duration-300 relative overflow-hidden ${
+                className={`flex items-center gap-3 px-5 py-3 rounded-xl font-medium transition-all duration-300 relative overflow-hidden ${
                   isActive(item.path)
                     ? 'bg-gradient-to-r from-primary-blue to-blue-500 text-white shadow-lg shadow-primary-blue/30'
                     : 'text-white/80 hover:text-white hover:bg-white/10 border border-transparent hover:border-white/20'
@@ -120,6 +108,7 @@ export default function Navigation() {
                 {isActive(item.path) && (
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                 )}
+                {item.icon}
                 <span className="relative z-10">{item.name}</span>
               </Link>
             ))}

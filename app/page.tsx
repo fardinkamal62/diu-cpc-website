@@ -2,12 +2,13 @@ import GlassCard from '@/components/GlassCard';
 import GlassButton from '@/components/GlassButton';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Users, Trophy, Target, GraduationCap, Handshake, Briefcase, Laptop, Library, Telescope, Medal, Award } from 'lucide-react';
 
 export default function Home() {
   const stats = [
-    { icon: '👥', value: '500+', label: 'Active Members' },
-    { icon: '🏆', value: '50+', label: 'Events Organized' },
-    { icon: '🎯', value: '10+', label: 'Years Active' },
+    { icon: <Users className="w-8 h-8 text-white" />, value: '500+', label: 'Active Members' },
+    { icon: <Trophy className="w-8 h-8 text-white" />, value: '50+', label: 'Events Organized' },
+    { icon: <Target className="w-8 h-8 text-white" />, value: '10+', label: 'Years Active' },
   ];
 
   const featuredEvents = [
@@ -42,40 +43,46 @@ export default function Home() {
 
   const benefits = [
     {
-      icon: '🎓',
+      icon: <GraduationCap className="w-8 h-8 text-white" />,
       title: 'Skill Development',
       description: 'Learn cutting-edge technologies through workshops, bootcamps, and hands-on projects.',
     },
     {
-      icon: '🏆',
+      icon: <Trophy className="w-8 h-8 text-white" />,
       title: 'Competitions',
       description: 'Participate in coding competitions, hackathons, and programming contests.',
     },
     {
-      icon: '🤝',
+      icon: <Handshake className="w-8 h-8 text-white" />,
       title: 'Networking',
       description: 'Connect with fellow programmers, industry professionals, and tech enthusiasts.',
     },
     {
-      icon: '💼',
+      icon: <Briefcase className="w-8 h-8 text-white" />,
       title: 'Career Growth',
       description: 'Get guidance on internships, job opportunities, and career development.',
     },
     {
-      icon: '💻',
+      icon: <Laptop className="w-8 h-8 text-white" />,
       title: 'Real Projects',
       description: 'Work on real-world projects and build your portfolio with practical experience.',
     },
     {
-      icon: '📚',
+      icon: <Library className="w-8 h-8 text-white" />,
       title: 'Resources',
       description: 'Access exclusive learning materials, tutorials, and coding resources.',
     },
   ];
 
   const achievements = [
-    '🥇 NASA International Space Apps Challenge 2025 Champion (Barishal Region)',
-    '🎖️ NASA International Space Apps Challenge 2025 1st Runners-Up, Cumilla Division',
+    {
+      icon: <Medal className="w-6 h-6 text-yellow-400" />,
+      text: 'NASA International Space Apps Challenge 2025 Champion (Barishal Region)'
+    },
+    {
+      icon: <Award className="w-6 h-6 text-yellow-500" />,
+      text: 'NASA International Space Apps Challenge 2025 1st Runners-Up, Cumilla Division'
+    }
   ];
 
   return (
@@ -113,7 +120,7 @@ export default function Home() {
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Empowering students at Dhaka International University through coding, 
+              Empowering students at Dhaka International University through coding,
               innovation, and technology.
               <br />
               Join the largest programming community on campus.
@@ -166,7 +173,7 @@ export default function Home() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-16 h-16 mx-auto mb-4 rounded-2xl blue-gradient-enhanced flex items-center justify-center shadow-lg">
-                <span className="text-3xl">{stat.icon}</span>
+                {stat.icon}
               </div>
               <h3 className="text-4xl font-bold text-white mb-2">{stat.value}</h3>
               <p className="text-white/70">{stat.label}</p>
@@ -183,8 +190,8 @@ export default function Home() {
               What is DIU CPC?
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              The Computer Programming Club at Dhaka International University is the premier 
-              student organization dedicated to fostering excellence in computer science, 
+              The Computer Programming Club at Dhaka International University is the premier
+              student organization dedicated to fostering excellence in computer science,
               software development, and technology innovation.
             </p>
           </div>
@@ -193,13 +200,13 @@ export default function Home() {
             <GlassCard enhanced className="p-8 animate-slide-up">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg flex-shrink-0">
-                  <span className="text-3xl">🎯</span>
+                  <Target className="w-7 h-7 text-white" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-3">Our Mission</h3>
                   <p className="text-white/80 leading-relaxed">
-                    To create a vibrant community where students can enhance their programming 
-                    skills, collaborate on innovative projects, and prepare for successful 
+                    To create a vibrant community where students can enhance their programming
+                    skills, collaborate on innovative projects, and prepare for successful
                     careers in technology through workshops, competitions, and mentorship.
                   </p>
                 </div>
@@ -209,13 +216,13 @@ export default function Home() {
             <GlassCard enhanced className="p-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg flex-shrink-0">
-                  <span className="text-3xl">🔭</span>
+                  <Telescope className="w-7 h-7 text-white" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-3">Our Vision</h3>
                   <p className="text-white/80 leading-relaxed">
-                    To become the leading programming community in Bangladesh, producing 
-                    world-class developers who excel in competitive programming, software 
+                    To become the leading programming community in Bangladesh, producing
+                    world-class developers who excel in competitive programming, software
                     development, and technological innovation on a global scale.
                   </p>
                 </div>
@@ -226,57 +233,57 @@ export default function Home() {
       </section>
 
       {/* Featured Events */}
-      <section className="py-20 container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-12 animate-fade-in">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Upcoming Events
-              </h2>
-              <p className="text-xl text-white/70">
-                Join our workshops, competitions, and tech talks
-              </p>
-            </div>
-            <GlassButton href="/events" variant="outline">
-              View All Events
-            </GlassButton>
-          </div>
+      {/*<section className="py-20 container mx-auto px-4">*/}
+      {/*  <div className="max-w-6xl mx-auto">*/}
+      {/*    <div className="flex items-center justify-between mb-12 animate-fade-in">*/}
+      {/*      <div>*/}
+      {/*        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">*/}
+      {/*          Upcoming Events*/}
+      {/*        </h2>*/}
+      {/*        <p className="text-xl text-white/70">*/}
+      {/*          Join our workshops, competitions, and tech talks*/}
+      {/*        </p>*/}
+      {/*      </div>*/}
+      {/*      <GlassButton href="/events" variant="outline">*/}
+      {/*        View All Events*/}
+      {/*      </GlassButton>*/}
+      {/*    </div>*/}
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {featuredEvents.map((event, index) => (
-              <GlassCard
-                key={event.id}
-                enhanced
-                className="group cursor-pointer animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className={`h-48 rounded-2xl bg-gradient-to-br ${event.color} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 shadow-lg`}>
-                  <span className="text-7xl">{event.icon}</span>
-                </div>
-                <span className="inline-block px-3 py-1 rounded-lg blue-gradient text-white text-xs font-medium mb-3">
-                  {event.type}
-                </span>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-light transition-colors">
-                  {event.title}
-                </h3>
-                <p className="text-white/70 mb-4 text-sm leading-relaxed">
-                  {event.description}
-                </p>
-                <div className="flex items-center gap-2 text-xs text-primary-light">
-                  <span>📅</span>
-                  <span>{event.date}</span>
-                </div>
-              </GlassCard>
-            ))}
-          </div>
+      {/*    <div className="grid md:grid-cols-3 gap-8">*/}
+      {/*      {featuredEvents.map((event, index) => (*/}
+      {/*        <GlassCard*/}
+      {/*          key={event.id}*/}
+      {/*          enhanced*/}
+      {/*          className="group cursor-pointer animate-slide-up"*/}
+      {/*          style={{ animationDelay: `${index * 0.1}s` }}*/}
+      {/*        >*/}
+      {/*          <div className={`h-48 rounded-2xl bg-gradient-to-br ${event.color} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 shadow-lg`}>*/}
+      {/*            <span className="text-7xl">{event.icon}</span>*/}
+      {/*          </div>*/}
+      {/*          <span className="inline-block px-3 py-1 rounded-lg blue-gradient text-white text-xs font-medium mb-3">*/}
+      {/*            {event.type}*/}
+      {/*          </span>*/}
+      {/*          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-light transition-colors">*/}
+      {/*            {event.title}*/}
+      {/*          </h3>*/}
+      {/*          <p className="text-white/70 mb-4 text-sm leading-relaxed">*/}
+      {/*            {event.description}*/}
+      {/*          </p>*/}
+      {/*          <div className="flex items-center gap-2 text-xs text-primary-light">*/}
+      {/*            <span>📅</span>*/}
+      {/*            <span>{event.date}</span>*/}
+      {/*          </div>*/}
+      {/*        </GlassCard>*/}
+      {/*      ))}*/}
+      {/*    </div>*/}
 
-          <div className="text-center mt-12">
-            <GlassButton href="/events" variant="blue" className="px-8 py-4">
-              Explore All Events
-            </GlassButton>
-          </div>
-        </div>
-      </section>
+      {/*    <div className="text-center mt-12">*/}
+      {/*      <GlassButton href="/events" variant="blue" className="px-8 py-4">*/}
+      {/*        Explore All Events*/}
+      {/*      </GlassButton>*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</section>*/}
 
       {/* Benefits Section */}
       <section className="py-20 container mx-auto px-4">
@@ -298,7 +305,7 @@ export default function Home() {
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <div className="w-14 h-14 rounded-xl blue-gradient-enhanced flex items-center justify-center shadow-lg mb-4">
-                  <span className="text-3xl">{benefit.icon}</span>
+                  {benefit.icon}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
                 <p className="text-white/70 leading-relaxed text-sm">
@@ -322,7 +329,8 @@ export default function Home() {
                   className="flex items-center gap-3 glass-card p-4 rounded-xl animate-scale-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <span className="text-white/90 text-lg">{achievement}</span>
+                  {achievement.icon}
+                  <span className="text-white/90 text-lg text-left">{achievement.text}</span>
                 </div>
               ))}
             </div>
@@ -382,13 +390,13 @@ export default function Home() {
           <GlassCard enhanced className="p-12 md:p-16 text-center relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/10 to-transparent pointer-events-none" />
-            
+
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to Start Your Journey?
               </h2>
               <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Join DIU Computer Programming Club today and become part of a thriving 
+                Join DIU Computer Programming Club today and become part of a thriving
                 community of developers, innovators, and tech enthusiasts.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

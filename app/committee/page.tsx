@@ -265,7 +265,7 @@ export default function CommitteePage() {
             Want to Contribute?
           </h2>
           <p className="text-white/70 mb-8 max-w-2xl mx-auto">
-            Join our committee and help shape the future of DIU CPC. We're always
+            Join our committee and help shape the future of DIU CPC. We&#39;re always
             looking for passionate individuals to join our team.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
