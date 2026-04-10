@@ -1,39 +1,40 @@
 'use client';
 
 import GlassCard from '@/components/GlassCard';
-import { GraduationCap, Trophy, Handshake, Briefcase, Library, Target, CalendarClock } from 'lucide-react';
+import GlassButton from '@/components/GlassButton';
+import { LuGraduationCap, LuTrophy, LuHandshake, LuBriefcase, LuLibrary, LuTarget, LuCalendarClock } from 'react-icons/lu';
 
-export default function MembershipPage() {
+export default function Membership() {
   const benefits = [
     {
-      icon: <GraduationCap className="w-8 h-8 text-foreground" />,
-      title: 'Exclusive Workshops',
-      description: 'Access to premium workshops and training sessions',
+      icon: <LuGraduationCap className="w-6 h-6" />,
+      title: 'Skill Development',
+      description: 'Access to exclusive workshops, training sessions, and bootcamps.',
     },
     {
-      icon: <Trophy className="w-8 h-8 text-foreground" />,
+      icon: <LuTrophy className="w-6 h-6" />,
       title: 'Competitions',
-      description: 'Participate in coding competitions and hackathons',
+      description: 'Represent DIU in national and internal programming contests.',
     },
     {
-      icon: <Handshake className="w-8 h-8 text-foreground" />,
+      icon: <LuHandshake className="w-6 h-6" />,
       title: 'Networking',
-      description: 'Connect with industry professionals and peers',
+      description: 'Connect with alumni, industry experts, and fellow programmers.',
     },
     {
-      icon: <Briefcase className="w-8 h-8 text-foreground" />,
+      icon: <LuBriefcase className="w-6 h-6" />,
       title: 'Career Support',
-      description: 'Get guidance on internships and job opportunities',
+      description: 'Guidance for internships, job placements, and resume building.',
     },
     {
-      icon: <Library className="w-8 h-8 text-foreground" />,
-      title: 'Learning Resources',
-      description: 'Access to coding tutorials and study materials',
+      icon: <LuLibrary className="w-6 h-6" />,
+      title: 'Resources',
+      description: 'Free access to premium learning materials and coding resources.',
     },
     {
-      icon: <Target className="w-8 h-8 text-foreground" />,
-      title: 'Projects',
-      description: 'Collaborate on real-world projects',
+      icon: <LuTarget className="w-6 h-6" />,
+      title: 'Mentorship',
+      description: '1-on-1 guidance from senior unviersity students and alumni.',
     },
   ];
 
@@ -43,7 +44,7 @@ export default function MembershipPage() {
       <section className="animate-fade-in">
         <GlassCard enhanced className="text-center py-12">
           <div className="inline-block p-6 rounded-3xl blue-gradient-enhanced mb-6 shadow-xl">
-            <GraduationCap className="w-12 h-12 text-foreground" />
+            <LuGraduationCap className="w-12 h-12 text-foreground" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Become a Member
@@ -80,7 +81,7 @@ export default function MembershipPage() {
               Membership Application
             </h2>
             <p className="text-red-400 font-medium bg-red-400/10 inline-flex px-6 py-2 text-sm rounded-full border border-red-400 items-center flex-nowrap gap-3 animate-pulse">
-              <CalendarClock className="w-5 h-5 flex-shrink-0" />
+              <LuCalendarClock className="w-5 h-5 flex-shrink-0" />
               <span className="whitespace-nowrap">Deadline: April 15, 2026</span>
             </p>
           </div>

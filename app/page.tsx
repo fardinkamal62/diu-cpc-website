@@ -2,13 +2,14 @@ import GlassCard from '@/components/GlassCard';
 import GlassButton from '@/components/GlassButton';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Users, Trophy, Target, GraduationCap, Handshake, Briefcase, Laptop, Library, Telescope, Medal, Award } from 'lucide-react';
+import { LuUsers, LuTrophy, LuTarget, LuGraduationCap, LuHandshake, LuBriefcase, LuLaptop, LuLibrary, LuTelescope, LuMedal, LuAward } from 'react-icons/lu';
+import { FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 export default function Home() {
   const stats = [
-    { icon: <Users className="w-8 h-8 text-foreground" />, value: '500+', label: 'Active Members' },
-    { icon: <Trophy className="w-8 h-8 text-foreground" />, value: '50+', label: 'Events Organized' },
-    { icon: <Target className="w-8 h-8 text-foreground" />, value: '10+', label: 'Years Active' },
+    { icon: <LuUsers className="w-8 h-8 text-foreground" />, value: '500+', label: 'Active Members' },
+    { icon: <LuTrophy className="w-8 h-8 text-foreground" />, value: '50+', label: 'Events Organized' },
+    { icon: <LuTarget className="w-8 h-8 text-foreground" />, value: '10+', label: 'Years Active' },
   ];
 
   const featuredEvents = [
@@ -43,32 +44,32 @@ export default function Home() {
 
   const benefits = [
     {
-      icon: <GraduationCap className="w-8 h-8 text-foreground" />,
+      icon: <LuGraduationCap className="w-8 h-8 text-foreground" />,
       title: 'Skill Development',
       description: 'Learn cutting-edge technologies through workshops, bootcamps, and hands-on projects.',
     },
     {
-      icon: <Trophy className="w-8 h-8 text-foreground" />,
+      icon: <LuTrophy className="w-8 h-8 text-foreground" />,
       title: 'Competitions',
       description: 'Participate in coding competitions, hackathons, and programming contests.',
     },
     {
-      icon: <Handshake className="w-8 h-8 text-foreground" />,
+      icon: <LuHandshake className="w-8 h-8 text-foreground" />,
       title: 'Networking',
       description: 'Connect with fellow programmers, industry professionals, and tech enthusiasts.',
     },
     {
-      icon: <Briefcase className="w-8 h-8 text-foreground" />,
+      icon: <LuBriefcase className="w-8 h-8 text-foreground" />,
       title: 'Career Growth',
       description: 'Get guidance on internships, job opportunities, and career development.',
     },
     {
-      icon: <Laptop className="w-8 h-8 text-foreground" />,
+      icon: <LuLaptop className="w-8 h-8 text-foreground" />,
       title: 'Real Projects',
       description: 'Work on real-world projects and build your portfolio with practical experience.',
     },
     {
-      icon: <Library className="w-8 h-8 text-foreground" />,
+      icon: <LuLibrary className="w-8 h-8 text-foreground" />,
       title: 'Resources',
       description: 'Access exclusive learning materials, tutorials, and coding resources.',
     },
@@ -76,11 +77,11 @@ export default function Home() {
 
   const achievements = [
     {
-      icon: <Medal className="w-6 h-6 text-yellow-400" />,
+      icon: <LuMedal className="w-6 h-6 text-yellow-400" />,
       text: 'NASA International Space Apps Challenge 2025 Champion (Barishal Region)'
     },
     {
-      icon: <Award className="w-6 h-6 text-yellow-500" />,
+      icon: <LuAward className="w-6 h-6 text-yellow-500" />,
       text: 'NASA International Space Apps Challenge 2025 1st Runners-Up, Cumilla Division'
     }
   ];
@@ -200,7 +201,7 @@ export default function Home() {
             <GlassCard enhanced className="p-8 animate-slide-up">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg flex-shrink-0">
-                  <Target className="w-7 h-7 text-foreground" />
+                  <LuTarget className="w-7 h-7 text-foreground" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-foreground mb-3">Our Mission</h3>
@@ -216,7 +217,7 @@ export default function Home() {
             <GlassCard enhanced className="p-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg flex-shrink-0">
-                  <Telescope className="w-7 h-7 text-foreground" />
+                  <LuTelescope className="w-7 h-7 text-foreground" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-foreground mb-3">Our Vision</h3>
@@ -354,10 +355,8 @@ export default function Home() {
               className="block group"
             >
               <GlassCard enhanced className="p-8 text-center hover:scale-105 transition-all duration-300">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-lg group-hover:shadow-blue-500/50">
-                  <svg className="w-10 h-10 text-foreground" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
+                <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-transparent flex items-center justify-center shadow-none group-hover:scale-110 transition-transform">
+                  <FaFacebook className="w-16 h-16 text-[#1877F2]" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2">Facebook</h3>
                 <p className="text-foreground/70 text-sm">@diucsecpc</p>
@@ -371,10 +370,8 @@ export default function Home() {
               className="block group"
             >
               <GlassCard enhanced className="p-8 text-center hover:scale-105 transition-all duration-300">
-                <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:shadow-blue-400/50">
-                  <svg className="w-10 h-10 text-foreground" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
+                <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-transparent flex items-center justify-center shadow-none group-hover:scale-110 transition-transform">
+                  <FaLinkedin className="w-16 h-16 text-[#0A66C2]" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2">LinkedIn</h3>
                 <p className="text-foreground/70 text-sm">@diucsecpc</p>

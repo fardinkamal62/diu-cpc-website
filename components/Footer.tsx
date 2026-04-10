@@ -1,8 +1,8 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { Mail, MapPin } from 'lucide-react';
-import { FiFacebook as Facebook, FiLinkedin as Linkedin, FiGithub as Github, FiYoutube as Youtube } from 'react-icons/fi';
+import Image from 'next/image';
+import { LuMail, LuMapPin } from 'react-icons/lu';
+import { FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -27,16 +27,15 @@ export default function Footer() {
                             Dhaka International University Computer Programming Club -
                             Empowering students through coding, innovation, and technology.
                         </p>
-                        <div className="flex items-center gap-4">
-                            <a href="https://www.facebook.com/diucsecpc" target="_blank" rel="noopener noreferrer" className="p-2 bg-foreground/5 hover:bg-primary-blue hover:text-white rounded-full transition-all duration-300" aria-label="Facebook">
-                                <Facebook className="w-5 h-5" />
-                            </a>
-                            <a href="https://www.linkedin.com/company/diucsecpc" target="_blank" rel="noopener noreferrer" className="p-2 bg-foreground/5 hover:bg-primary-blue hover:text-white rounded-full transition-all duration-300" aria-label="LinkedIn">
-                                <Linkedin className="w-5 h-5" />
-                            </a>
-                            <a href="https://www.youtube.com/@DiuCseCPC" target="_blank" rel="noopener noreferrer" className="p-2 bg-foreground/5 hover:bg-primary-blue hover:text-white rounded-full transition-all duration-300" aria-label="YouTube">
-                                <Youtube className="w-5 h-5" />
-                            </a>
+                        <div className="flex gap-4">
+                          <a href="https://www.facebook.com/diucsecpc" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary-light transition-colors">
+                            <span className="sr-only">Facebook</span>
+                            <FaFacebook className="w-6 h-6" />
+                          </a>
+                          <a href="https://www.linkedin.com/company/diucsecpc" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-primary-light transition-colors">
+                            <span className="sr-only">LinkedIn</span>
+                            <FaLinkedin className="w-6 h-6" />
+                          </a>
                         </div>
                     </div>
 
@@ -72,12 +71,12 @@ export default function Footer() {
                         <h3 className="text-xl font-bold text-foreground mb-4">Contact</h3>
                         <ul className="space-y-2 text-sm text-foreground/70">
                             <li className="flex items-start gap-2">
-                                <Mail className="w-4 h-4 mt-1 flex-shrink-0" />
+                                <LuMail className="w-4 h-4 mt-1 flex-shrink-0" />
                                 <a href="mailto:diucsecpc.official@gmail.com"
                                    className="hover:text-foreground transition-colors">diucsecpc.official@gmail.com</a>
                             </li>
                             <li className="flex items-start gap-2">
-                                <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
+                                <LuMapPin className="w-4 h-4 mt-1 flex-shrink-0" />
                                 <Link href="https://maps.app.goo.gl/qLKKS733QhyQxFz3A" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Satarkul, Dhaka, Bangladesh</Link>
                             </li>
                             <li className="pt-2">

@@ -4,19 +4,19 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Home, Info, UserPlus, Menu, X } from 'lucide-react';
+import { LuHouse, LuInfo, LuUserPlus, LuMenu, LuX } from 'react-icons/lu';
 
-export default function Navigation() {
+const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  const navItems = [
-    { name: 'Home', path: '/', icon: <Home className="w-4 h-4" /> },
-    { name: 'About', path: '/about', icon: <Info className="w-4 h-4" /> },
-    // { name: 'Events', path: '/events' },
-    // { name: 'Committee', path: '/committee' },
-    { name: 'Become a Member', path: '/membership', icon: <UserPlus className="w-4 h-4" /> },
+  const links = [
+    { href: '/', label: 'Home', icon: <LuHouse className="w-4 h-4" /> },
+    { href: '/about', label: 'About', icon: <LuInfo className="w-4 h-4" /> },
+    // { href: '/committee', label: 'Committee', icon: <LuUserPlus className="w-4 h-4" /> },
+    // { href: '/events', label: 'Events', icon: <LuUserPlus className="w-4 h-4" /> },
+    { href: '/membership', label: 'Membership', icon: <LuUserPlus className="w-4 h-4" /> },
   ];
 
   const isActive = (path: string) => pathname === path;
@@ -62,54 +62,56 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-2 bg-foreground/5 backdrop-blur-md rounded-2xl p-2 border border-foreground/10 shadow-lg">
-            {navItems.map((item) => (
+            {links.map((link) => (
               <Link
-                key={item.path}
-                href={item.path}
+                key={link.href}
+                href={link.href}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all duration-300 relative overflow-hidden ${
-                  isActive(item.path)
+                  isActive(link.href)
                     ? 'bg-linear-to-r from-primary-blue to-primary-blue text-foreground shadow-lg shadow-primary-blue/30 blue-gradient-enhanced'
                     : 'text-foreground/80 hover:text-foreground hover:bg-foreground/10'
                 }`}
               >
-                {isActive(item.path) && (
+                {isActive(link.href) && (
                   <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/45 to-transparent animate-shimmer" />
                 )}
-                {item.icon}
-                <span className="relative z-10">{item.name}</span>
+                {link.icon}
+                <span className="relative z-10">{link.label}</span>
               </Link>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden bg-foreground/10 backdrop-blur-md hover:bg-foreground/20 p-2.5 rounded-xl transition-all duration-300 border border-foreground/20 hover:border-primary-blue/50 shadow-lg"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-6 h-6 text-foreground" /> : <Menu className="w-6 h-6 text-foreground" />}
-          </button>
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-foreground/80 hover:text-primary-light transition-colors p-2"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <LuX className="w-6 h-6" /> : <LuMenu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="lg:hidden mt-4 space-y-2 animate-slide-down bg-foreground/5 backdrop-blur-xl rounded-2xl p-4 border border-foreground/10 shadow-2xl">
-            {navItems.map((item) => (
+            {links.map((link) => (
               <Link
-                key={item.path}
-                href={item.path}
+                key={link.href}
+                href={link.href}
                 onClick={() => setIsOpen(false)}
                 className={`flex items-center gap-3 px-5 py-3 rounded-xl font-medium transition-all duration-300 relative overflow-hidden ${
-                  isActive(item.path)
+                  isActive(link.href)
                     ? 'bg-gradient-to-r from-primary-blue to-blue-500 text-foreground shadow-lg shadow-primary-blue/30'
                     : 'text-foreground/80 hover:text-foreground hover:bg-foreground/10 border border-transparent hover:border-foreground/20'
                 }`}
               >
-                {isActive(item.path) && (
+                {isActive(link.href) && (
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                 )}
-                {item.icon}
-                <span className="relative z-10">{item.name}</span>
+                {link.icon}
+                <span className="relative z-10">{link.label}</span>
               </Link>
             ))}
           </div>
@@ -118,3 +120,5 @@ export default function Navigation() {
     </nav>
   );
 }
+
+export default Navigation;

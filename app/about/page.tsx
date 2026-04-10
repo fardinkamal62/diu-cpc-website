@@ -1,33 +1,33 @@
 import Image from 'next/image';
 import GlassCard from '@/components/GlassCard';
 import GlassButton from '@/components/GlassButton';
-import { Users, Trophy, Target, Rocket, Handshake, Library, Goal, Telescope, GraduationCap, Briefcase, Laptop, Lightbulb } from 'lucide-react';
+import { LuUsers, LuTrophy, LuTarget, LuRocket, LuHandshake, LuLibrary, LuGoal, LuTelescope, LuGraduationCap, LuBriefcase, LuLaptop, LuLightbulb } from 'react-icons/lu';
 
-export default function AboutPage() {
+export default function About() {
   const stats = [
-    { icon: <Users className="w-8 h-8 text-foreground" />, value: '500+', label: 'Active Members' },
-    { icon: <Trophy className="w-8 h-8 text-foreground" />, value: '20+', label: 'Events Hosted' },
-    { icon: <Target className="w-8 h-8 text-foreground" />, value: '20+', label: 'Workshops' },
+    { label: 'Active Members', value: '500+', icon: <LuUsers className="w-6 h-6" /> },
+    { label: 'Events Hosted', value: '50+', icon: <LuTrophy className="w-6 h-6" /> },
+    { label: 'Workshop', value: '20+', icon: <LuRocket className="w-6 h-6" /> },
   ];
 
   const values = [
     {
-      icon: <Rocket className="w-6 h-6 text-foreground" />,
+      icon: <LuRocket className="w-6 h-6 text-foreground" />,
       title: 'Innovation',
       description: 'We encourage creative thinking and innovative solutions to real-world problems.',
     },
     {
-      icon: <Handshake className="w-6 h-6 text-foreground" />,
+      icon: <LuHandshake className="w-6 h-6 text-foreground" />,
       title: 'Collaboration',
       description: 'Working together to achieve common goals and learn from each other.',
     },
     {
-      icon: <Library className="w-6 h-6 text-foreground" />,
+      icon: <LuLibrary className="w-6 h-6 text-foreground" />,
       title: 'Learning',
       description: 'Continuous learning and skill development through workshops and projects.',
     },
     {
-      icon: <Goal className="w-6 h-6 text-foreground" />,
+      icon: <LuGoal className="w-6 h-6 text-foreground" />,
       title: 'Excellence',
       description: 'Striving for excellence in everything we do, from coding to competitions.',
     },
@@ -79,13 +79,13 @@ export default function AboutPage() {
 
       {/* Mission Section */}
       <section className="animate-slide-up">
-        <GlassCard enhanced>
-          <div className="flex items-start gap-6">
-            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg flex-shrink-0">
-              <Goal className="w-10 h-10 text-foreground" />
+        <GlassCard className="p-8">
+          <div className="flex items-start gap-4">
+            <div className="p-3 rounded-xl bg-blue-500/20 text-blue-400 shrink-0">
+              <LuTarget className="w-8 h-8" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-foreground mb-4">Our Mission</h2>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
               <p className="text-foreground/80 text-lg leading-relaxed">
                 To create a vibrant community where students can enhance their programming
                 skills, collaborate on projects, participate in competitions, and prepare
@@ -100,13 +100,13 @@ export default function AboutPage() {
 
       {/* Vision Section */}
       <section className="animate-slide-up">
-        <GlassCard enhanced>
-          <div className="flex items-start gap-6">
-            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg flex-shrink-0">
-              <Telescope className="w-10 h-10 text-foreground" />
+        <GlassCard className="p-8">
+          <div className="flex items-start gap-4">
+            <div className="p-3 rounded-xl bg-purple-500/20 text-purple-400 shrink-0">
+              <LuTelescope className="w-8 h-8" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-foreground mb-4">Our Vision</h2>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
               <p className="text-foreground/80 text-lg leading-relaxed">
                 To become the leading programming community in Bangladesh, producing
                 world-class developers who can compete globally. We envision a future
@@ -146,7 +146,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <GraduationCap className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
+                <LuGraduationCap className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-foreground font-semibold mb-1">Workshops & Training</h4>
                   <p className="text-foreground/70 text-sm">
@@ -155,7 +155,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Trophy className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
+                <LuTrophy className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-foreground font-semibold mb-1">Competitions</h4>
                   <p className="text-foreground/70 text-sm">
@@ -164,7 +164,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Briefcase className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
+                <LuBriefcase className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-foreground font-semibold mb-1">Career Development</h4>
                   <p className="text-foreground/70 text-sm">
@@ -175,7 +175,7 @@ export default function AboutPage() {
             </div>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Handshake className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
+                <LuHandshake className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-foreground font-semibold mb-1">Networking</h4>
                   <p className="text-foreground/70 text-sm">
@@ -184,7 +184,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Laptop className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
+                <LuLaptop className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-foreground font-semibold mb-1">Project Development</h4>
                   <p className="text-foreground/70 text-sm">
@@ -193,7 +193,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Library className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
+                <LuLibrary className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="text-foreground font-semibold mb-1">Resources</h4>
                   <p className="text-foreground/70 text-sm">
