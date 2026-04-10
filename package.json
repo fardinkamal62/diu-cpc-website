@@ -1,6 +1,6 @@
 {
   "name": "diu-cpc-website",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "The official website of the Computer Programming Club of Dhaka International University.",
   "website": "https://diu-cpc.vercel.app",
   "private": false,

@@ -86,7 +86,7 @@ export default function Membership() {
             </p>
           </div>
 
-          <div className="w-full bg-foreground rounded-xl overflow-hidden shadow-inner">
+          <div className="w-full rounded-xl overflow-hidden shadow-inner">
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSeYoqPOJPP9g-BWzB0nkvoJTpTCCel8NhVou92Zn8oiO_tD6w/viewform?embedded=true"
               width="100%"
