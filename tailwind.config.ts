@@ -9,12 +9,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Dark Blue Gradient Theme
-        'primary-dark': '#1a1a2e',
-        'secondary-dark': '#16213e',
-        'accent-dark': '#0f3460',
-        'surface-dark': '#1e2139',
-        'card-dark': '#252541',
+        'text-primary': 'var(--text-primary)',
+        'text-secondary': 'var(--text-secondary)',
+        'text-muted': 'var(--text-muted)',
+        // Theme settings
+        'primary-bg': 'var(--primary-bg)',
+        'secondary-bg': 'var(--secondary-bg)',
+        'accent-bg': 'var(--accent-bg)',
+        'surface-bg': 'var(--surface-bg)',
+        'card-bg': 'var(--card-bg)',
         
         // Blue Accents
         'primary-blue': '#3b82f6',

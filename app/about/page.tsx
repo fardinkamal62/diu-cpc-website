@@ -5,29 +5,29 @@ import { Users, Trophy, Target, Rocket, Handshake, Library, Goal, Telescope, Gra
 
 export default function AboutPage() {
   const stats = [
-    { icon: <Users className="w-8 h-8 text-white" />, value: '500+', label: 'Active Members' },
-    { icon: <Trophy className="w-8 h-8 text-white" />, value: '20+', label: 'Events Hosted' },
-    { icon: <Target className="w-8 h-8 text-white" />, value: '20+', label: 'Workshops' },
+    { icon: <Users className="w-8 h-8 text-foreground" />, value: '500+', label: 'Active Members' },
+    { icon: <Trophy className="w-8 h-8 text-foreground" />, value: '20+', label: 'Events Hosted' },
+    { icon: <Target className="w-8 h-8 text-foreground" />, value: '20+', label: 'Workshops' },
   ];
 
   const values = [
     {
-      icon: <Rocket className="w-6 h-6 text-white" />,
+      icon: <Rocket className="w-6 h-6 text-foreground" />,
       title: 'Innovation',
       description: 'We encourage creative thinking and innovative solutions to real-world problems.',
     },
     {
-      icon: <Handshake className="w-6 h-6 text-white" />,
+      icon: <Handshake className="w-6 h-6 text-foreground" />,
       title: 'Collaboration',
       description: 'Working together to achieve common goals and learn from each other.',
     },
     {
-      icon: <Library className="w-6 h-6 text-white" />,
+      icon: <Library className="w-6 h-6 text-foreground" />,
       title: 'Learning',
       description: 'Continuous learning and skill development through workshops and projects.',
     },
     {
-      icon: <Goal className="w-6 h-6 text-white" />,
+      icon: <Goal className="w-6 h-6 text-foreground" />,
       title: 'Excellence',
       description: 'Striving for excellence in everything we do, from coding to competitions.',
     },
@@ -45,15 +45,15 @@ export default function AboutPage() {
                 alt="DIU CPC Logo"
                 width={100}
                 height={100}
-                className="object-contain rounded-3xl bg-white/10 p-3"
+                className="object-contain rounded-3xl bg-foreground/10 p-3"
                 priority
               />
             </div>
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 About DIU CPC
               </h1>
-              <p className="text-lg text-white/80 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+              <p className="text-lg text-foreground/80 max-w-2xl mx-auto md:mx-0 leading-relaxed">
                 Fostering a community of passionate programmers and tech enthusiasts at
                 Dhaka International University.
               </p>
@@ -70,8 +70,8 @@ export default function AboutPage() {
               <div className="w-16 h-16 mx-auto mb-4 rounded-2xl blue-gradient-enhanced flex items-center justify-center shadow-lg">
                 {stat.icon}
               </div>
-              <h3 className="text-3xl font-bold text-white mb-2">{stat.value}</h3>
-              <p className="text-white/70 text-sm">{stat.label}</p>
+              <h3 className="text-3xl font-bold text-foreground mb-2">{stat.value}</h3>
+              <p className="text-foreground/70 text-sm">{stat.label}</p>
             </GlassCard>
           ))}
         </div>
@@ -82,11 +82,11 @@ export default function AboutPage() {
         <GlassCard enhanced>
           <div className="flex items-start gap-6">
             <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg flex-shrink-0">
-              <Goal className="w-10 h-10 text-white" />
+              <Goal className="w-10 h-10 text-foreground" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-white mb-4">Our Mission</h2>
-              <p className="text-white/80 text-lg leading-relaxed">
+              <h2 className="text-3xl font-bold text-foreground mb-4">Our Mission</h2>
+              <p className="text-foreground/80 text-lg leading-relaxed">
                 To create a vibrant community where students can enhance their programming
                 skills, collaborate on projects, participate in competitions, and prepare
                 for successful careers in technology. We aim to bridge the gap between
@@ -103,11 +103,11 @@ export default function AboutPage() {
         <GlassCard enhanced>
           <div className="flex items-start gap-6">
             <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg flex-shrink-0">
-              <Telescope className="w-10 h-10 text-white" />
+              <Telescope className="w-10 h-10 text-foreground" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-white mb-4">Our Vision</h2>
-              <p className="text-white/80 text-lg leading-relaxed">
+              <h2 className="text-3xl font-bold text-foreground mb-4">Our Vision</h2>
+              <p className="text-foreground/80 text-lg leading-relaxed">
                 To become the leading programming community in Bangladesh, producing
                 world-class developers who can compete globally. We envision a future
                 where every member is equipped with cutting-edge technical skills,
@@ -121,7 +121,7 @@ export default function AboutPage() {
 
       {/* Values Section */}
       <section className="animate-slide-up">
-        <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Core Values</h2>
+        <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Our Core Values</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {values.map((value, index) => (
             <GlassCard key={index} className="hover:scale-[1.02] transition-transform duration-300">
@@ -130,8 +130,8 @@ export default function AboutPage() {
                   {value.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">{value.title}</h3>
-                  <p className="text-white/70 leading-relaxed">{value.description}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{value.title}</h3>
+                  <p className="text-foreground/70 leading-relaxed">{value.description}</p>
                 </div>
               </div>
             </GlassCard>
@@ -142,14 +142,14 @@ export default function AboutPage() {
       {/* What We Do Section */}
       <section className="animate-slide-up">
         <GlassCard enhanced>
-          <h2 className="text-3xl font-bold text-white mb-6 text-center">What We Do</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6 text-center">What We Do</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <GraduationCap className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-white font-semibold mb-1">Workshops & Training</h4>
-                  <p className="text-white/70 text-sm">
+                  <h4 className="text-foreground font-semibold mb-1">Workshops & Training</h4>
+                  <p className="text-foreground/70 text-sm">
                     Regular workshops on various programming languages and technologies
                   </p>
                 </div>
@@ -157,8 +157,8 @@ export default function AboutPage() {
               <div className="flex items-start gap-3">
                 <Trophy className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-white font-semibold mb-1">Competitions</h4>
-                  <p className="text-white/70 text-sm">
+                  <h4 className="text-foreground font-semibold mb-1">Competitions</h4>
+                  <p className="text-foreground/70 text-sm">
                     Organize and participate in coding competitions and hackathons
                   </p>
                 </div>
@@ -166,8 +166,8 @@ export default function AboutPage() {
               <div className="flex items-start gap-3">
                 <Briefcase className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-white font-semibold mb-1">Career Development</h4>
-                  <p className="text-white/70 text-sm">
+                  <h4 className="text-foreground font-semibold mb-1">Career Development</h4>
+                  <p className="text-foreground/70 text-sm">
                     Guidance on career paths, internships, and job opportunities
                   </p>
                 </div>
@@ -177,8 +177,8 @@ export default function AboutPage() {
               <div className="flex items-start gap-3">
                 <Handshake className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-white font-semibold mb-1">Networking</h4>
-                  <p className="text-white/70 text-sm">
+                  <h4 className="text-foreground font-semibold mb-1">Networking</h4>
+                  <p className="text-foreground/70 text-sm">
                     Connect with fellow programmers and industry professionals
                   </p>
                 </div>
@@ -186,8 +186,8 @@ export default function AboutPage() {
               <div className="flex items-start gap-3">
                 <Laptop className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-white font-semibold mb-1">Project Development</h4>
-                  <p className="text-white/70 text-sm">
+                  <h4 className="text-foreground font-semibold mb-1">Project Development</h4>
+                  <p className="text-foreground/70 text-sm">
                     Collaborative projects to build real-world applications
                   </p>
                 </div>
@@ -195,8 +195,8 @@ export default function AboutPage() {
               <div className="flex items-start gap-3">
                 <Library className="w-6 h-6 text-primary-light flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-white font-semibold mb-1">Resources</h4>
-                  <p className="text-white/70 text-sm">
+                  <h4 className="text-foreground font-semibold mb-1">Resources</h4>
+                  <p className="text-foreground/70 text-sm">
                     Access to learning materials, tutorials, and coding challenges
                   </p>
                 </div>
@@ -209,10 +209,10 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="animate-scale-in">
         <GlassCard enhanced className="text-center py-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             Join Our Community
           </h2>
-          <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+          <p className="text-foreground/70 mb-8 max-w-2xl mx-auto">
             Be a part of something bigger. Join DIU CPC today and start your journey
             towards becoming a skilled programmer.
           </p>

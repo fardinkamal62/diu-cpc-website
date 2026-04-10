@@ -104,8 +104,8 @@ export default function EventsPage() {
           <div className="inline-block p-6 rounded-3xl blue-gradient-enhanced mb-6 shadow-xl">
             <span className="text-5xl">📅</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Events</h1>
-          <p className="text-xl text-white/70 mb-2">5 total events</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Events</h1>
+          <p className="text-xl text-foreground/70 mb-2">5 total events</p>
         </GlassCard>
       </section>
 
@@ -123,16 +123,16 @@ export default function EventsPage() {
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                   <div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                    <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
                       {event.title}
                     </h2>
-                    <span className="inline-block px-3 py-1 rounded-lg blue-gradient text-white text-sm font-medium">
+                    <span className="inline-block px-3 py-1 rounded-lg blue-gradient text-foreground text-sm font-medium">
                       {event.type}
                     </span>
                   </div>
                 </div>
 
-                <p className="text-white/80 mb-4 leading-relaxed">
+                <p className="text-foreground/80 mb-4 leading-relaxed">
                   {event.description}
                 </p>
 
@@ -140,19 +140,19 @@ export default function EventsPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center gap-2 text-sm">
                     <span className="text-primary-light">📅</span>
-                    <span className="text-white/70">{event.date}</span>
+                    <span className="text-foreground/70">{event.date}</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <span className="text-primary-light">🕐</span>
-                    <span className="text-white/70">{event.time}</span>
+                    <span className="text-foreground/70">{event.time}</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <span className="text-primary-light">📍</span>
-                    <span className="text-white/70">{event.location}</span>
+                    <span className="text-foreground/70">{event.location}</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <span className="text-primary-light">👥</span>
-                    <span className="text-white/70">{event.capacity}</span>
+                    <span className="text-foreground/70">{event.capacity}</span>
                   </div>
                 </div>
 
@@ -161,7 +161,7 @@ export default function EventsPage() {
                   {event.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 rounded-lg glass-card text-xs text-white/70 border border-white/20"
+                      className="px-3 py-1 rounded-lg glass-card text-xs text-foreground/70 border border-foreground/20"
                     >
                       {tag}
                     </span>
@@ -194,10 +194,10 @@ export default function EventsPage() {
       {/* CTA Section */}
       <section className="animate-scale-in">
         <GlassCard enhanced className="text-center py-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             Don't Miss Out!
           </h2>
-          <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+          <p className="text-foreground/70 mb-8 max-w-2xl mx-auto">
             Stay updated with our latest events and workshops. Join DIU CPC today
             to get early access to event registrations.
           </p>

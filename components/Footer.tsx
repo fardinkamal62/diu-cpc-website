@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Mail, MapPin, Globe } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
+import { FiFacebook as Facebook, FiLinkedin as Linkedin, FiGithub as Github, FiYoutube as Youtube } from 'react-icons/fi';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -20,35 +21,46 @@ export default function Footer() {
                                 height={40}
                                 className="object-contain"
                             />
-                            <h3 className="text-xl font-bold text-white">DIU CPC</h3>
+                            <h3 className="text-xl font-bold text-foreground">DIU CPC</h3>
                         </div>
-                        <p className="text-white/70 text-sm leading-relaxed">
+                        <p className="text-foreground/70 text-sm leading-relaxed mb-6">
                             Dhaka International University Computer Programming Club -
                             Empowering students through coding, innovation, and technology.
                         </p>
+                        <div className="flex items-center gap-4">
+                            <a href="https://www.facebook.com/diucsecpc" target="_blank" rel="noopener noreferrer" className="p-2 bg-foreground/5 hover:bg-primary-blue hover:text-white rounded-full transition-all duration-300" aria-label="Facebook">
+                                <Facebook className="w-5 h-5" />
+                            </a>
+                            <a href="https://www.linkedin.com/company/diucsecpc" target="_blank" rel="noopener noreferrer" className="p-2 bg-foreground/5 hover:bg-primary-blue hover:text-white rounded-full transition-all duration-300" aria-label="LinkedIn">
+                                <Linkedin className="w-5 h-5" />
+                            </a>
+                            <a href="https://www.youtube.com/@DiuCseCPC" target="_blank" rel="noopener noreferrer" className="p-2 bg-foreground/5 hover:bg-primary-blue hover:text-white rounded-full transition-all duration-300" aria-label="YouTube">
+                                <Youtube className="w-5 h-5" />
+                            </a>
+                        </div>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="text-xl font-bold text-white mb-4">Quick Links</h3>
+                        <h3 className="text-xl font-bold text-foreground mb-4">Quick Links</h3>
                         <ul className="space-y-2 text-sm">
                             <li>
-                                <Link href="/" className="text-white/70 hover:text-white transition-colors">
-                                    Home
+                                <Link href="https://diu.ac/" className="text-foreground/70 hover:text-foreground transition-colors" target="_blank">
+                                    Dhaka International University Official Website
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/about" className="text-white/70 hover:text-white transition-colors">
-                                    About Us
+                                <Link href="/membership" className="text-foreground/70 hover:text-foreground transition-colors">
+                                    Join DIU CPC
                                 </Link>
                             </li>
                             {/*<li>*/}
-                            {/*    <Link href="/events" className="text-white/70 hover:text-white transition-colors">*/}
+                            {/*    <Link href="/events" className="text-foreground/70 hover:text-foreground transition-colors">*/}
                             {/*        Events*/}
                             {/*    </Link>*/}
                             {/*</li>*/}
                             {/*<li>*/}
-                            {/*    <Link href="/committee" className="text-white/70 hover:text-white transition-colors">*/}
+                            {/*    <Link href="/committee" className="text-foreground/70 hover:text-foreground transition-colors">*/}
                             {/*        Committee*/}
                             {/*    </Link>*/}
                             {/*</li>*/}
@@ -57,20 +69,16 @@ export default function Footer() {
 
                     {/* Contact */}
                     <div>
-                        <h3 className="text-xl font-bold text-white mb-4">Contact</h3>
-                        <ul className="space-y-2 text-sm text-white/70">
+                        <h3 className="text-xl font-bold text-foreground mb-4">Contact</h3>
+                        <ul className="space-y-2 text-sm text-foreground/70">
                             <li className="flex items-start gap-2">
                                 <Mail className="w-4 h-4 mt-1 flex-shrink-0" />
                                 <a href="mailto:diucsecpc.official@gmail.com"
-                                   className="hover:text-white transition-colors">diucsecpc.official@gmail.com</a>
+                                   className="hover:text-foreground transition-colors">diucsecpc.official@gmail.com</a>
                             </li>
                             <li className="flex items-start gap-2">
                                 <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                                <span>Dhaka International University Main Building</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <Globe className="w-4 h-4 mt-1 flex-shrink-0" />
-                                <span>Dhaka, Bangladesh</span>
+                                <Link href="https://maps.app.goo.gl/qLKKS733QhyQxFz3A" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Satarkul, Dhaka, Bangladesh</Link>
                             </li>
                             <li className="pt-2">
                                 <iframe
@@ -86,8 +94,8 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-white/10 text-center">
-                    <p className="text-white/60 text-sm">
+                <div className="mt-8 pt-8 border-t border-foreground/10 text-center">
+                    <p className="text-foreground/60 text-sm">
                         © {currentYear} DIU Computer Programming Club. All rights reserved.
                     </p>
                 </div>

@@ -46,7 +46,7 @@ This workshop is perfect for beginners and intermediate developers looking to ex
       {/* Back Button */}
       <button
         onClick={() => router.back()}
-        className="flex items-center gap-2 text-white/70 hover:text-white transition-colors animate-fade-in"
+        className="flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors animate-fade-in"
       >
         <span className="text-xl">←</span>
         <span>Back to Events</span>
@@ -62,13 +62,13 @@ This workshop is perfect for beginners and intermediate developers looking to ex
             
             <div className="flex-1">
               <div className="mb-4">
-                <span className="inline-block px-4 py-2 rounded-xl blue-gradient text-white text-sm font-medium mb-4">
+                <span className="inline-block px-4 py-2 rounded-xl blue-gradient text-foreground text-sm font-medium mb-4">
                   {event.type}
                 </span>
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                   {event.title}
                 </h1>
-                <p className="text-xl text-white/80 leading-relaxed">
+                <p className="text-xl text-foreground/80 leading-relaxed">
                   {event.description}
                 </p>
               </div>
@@ -91,20 +91,20 @@ This workshop is perfect for beginners and intermediate developers looking to ex
         <div className="lg:col-span-2 space-y-8">
           {/* About This Event */}
           <GlassCard enhanced className="animate-slide-up">
-            <h2 className="text-3xl font-bold text-white mb-6">About This Event</h2>
-            <div className="text-white/80 leading-relaxed whitespace-pre-line">
+            <h2 className="text-3xl font-bold text-foreground mb-6">About This Event</h2>
+            <div className="text-foreground/80 leading-relaxed whitespace-pre-line">
               {event.fullDescription}
             </div>
           </GlassCard>
 
           {/* Tags */}
           <GlassCard className="animate-slide-up">
-            <h3 className="text-2xl font-bold text-white mb-4">Tags</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-4">Tags</h3>
             <div className="flex flex-wrap gap-3">
               {event.tags.map((tag: string, index: number) => (
                 <span
                   key={index}
-                  className="px-4 py-2 rounded-xl blue-gradient text-white text-sm font-medium"
+                  className="px-4 py-2 rounded-xl blue-gradient text-foreground text-sm font-medium"
                 >
                   {tag}
                 </span>
@@ -117,39 +117,39 @@ This workshop is perfect for beginners and intermediate developers looking to ex
         <div className="lg:col-span-1 space-y-6">
           {/* Event Information */}
           <GlassCard enhanced className="animate-slide-up sticky top-24">
-            <h3 className="text-2xl font-bold text-white mb-6">Event Information</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Event Information</h3>
             
             <div className="space-y-6">
               <div>
-                <h4 className="flex items-center gap-2 text-white/60 text-sm mb-2">
+                <h4 className="flex items-center gap-2 text-foreground/60 text-sm mb-2">
                   <span>📅</span> Date
                 </h4>
-                <p className="text-white text-lg font-medium">{event.date}</p>
+                <p className="text-foreground text-lg font-medium">{event.date}</p>
               </div>
 
               <div>
-                <h4 className="flex items-center gap-2 text-white/60 text-sm mb-2">
+                <h4 className="flex items-center gap-2 text-foreground/60 text-sm mb-2">
                   <span>🕐</span> Time
                 </h4>
-                <p className="text-white text-lg font-medium">{event.time}</p>
+                <p className="text-foreground text-lg font-medium">{event.time}</p>
               </div>
 
               <div>
-                <h4 className="flex items-center gap-2 text-white/60 text-sm mb-2">
+                <h4 className="flex items-center gap-2 text-foreground/60 text-sm mb-2">
                   <span>👥</span> Capacity
                 </h4>
-                <p className="text-white text-lg font-medium">{event.capacity}</p>
+                <p className="text-foreground text-lg font-medium">{event.capacity}</p>
               </div>
 
               <div>
-                <h4 className="flex items-center gap-2 text-white/60 text-sm mb-2">
+                <h4 className="flex items-center gap-2 text-foreground/60 text-sm mb-2">
                   <span>👤</span> Organizer
                 </h4>
-                <p className="text-white text-lg font-medium">{event.organizer}</p>
+                <p className="text-foreground text-lg font-medium">{event.organizer}</p>
               </div>
 
               <div>
-                <h4 className="flex items-center gap-2 text-white/60 text-sm mb-2">
+                <h4 className="flex items-center gap-2 text-foreground/60 text-sm mb-2">
                   <span>📧</span> Contact
                 </h4>
                 <p className="text-primary-light text-sm font-medium break-all">
@@ -161,34 +161,34 @@ This workshop is perfect for beginners and intermediate developers looking to ex
 
           {/* Registration Info */}
           <GlassCard className="animate-slide-up">
-            <h3 className="text-xl font-bold text-white mb-4">Registration</h3>
+            <h3 className="text-xl font-bold text-foreground mb-4">Registration</h3>
             
             <div className="space-y-4">
               <div>
-                <h4 className="flex items-center gap-2 text-white/60 text-sm mb-2">
+                <h4 className="flex items-center gap-2 text-foreground/60 text-sm mb-2">
                   <span>📅</span> Registration Period
                 </h4>
-                <p className="text-white font-medium">{event.registrationPeriod}</p>
+                <p className="text-foreground font-medium">{event.registrationPeriod}</p>
               </div>
 
               <div>
-                <h4 className="flex items-center gap-2 text-white/60 text-sm mb-2">
+                <h4 className="flex items-center gap-2 text-foreground/60 text-sm mb-2">
                   <span>💵</span> Fee
                 </h4>
-                <p className="text-white font-medium">{event.fee}</p>
+                <p className="text-foreground font-medium">{event.fee}</p>
               </div>
             </div>
           </GlassCard>
 
           {/* Location */}
           <GlassCard className="animate-slide-up">
-            <h3 className="text-xl font-bold text-white mb-4">Location</h3>
+            <h3 className="text-xl font-bold text-foreground mb-4">Location</h3>
             <div className="flex items-start gap-3">
               <div className="w-12 h-12 rounded-xl blue-gradient flex items-center justify-center shadow-lg flex-shrink-0">
                 <span className="text-2xl">📍</span>
               </div>
               <div>
-                <p className="text-white font-medium leading-relaxed">
+                <p className="text-foreground font-medium leading-relaxed">
                   {event.location}
                 </p>
               </div>

@@ -146,8 +146,8 @@ export default function CommitteePage() {
           <div className="inline-block p-6 rounded-3xl bg-gradient-to-br from-yellow-500 to-yellow-600 mb-6 shadow-xl">
             <span className="text-5xl">👥</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Members</h1>
-          <p className="text-xl text-white/70 mb-2">Committee & Executive Members</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Members</h1>
+          <p className="text-xl text-foreground/70 mb-2">Committee & Executive Members</p>
           <p className="text-primary-light font-semibold">10 total members</p>
         </GlassCard>
       </section>
@@ -155,10 +155,10 @@ export default function CommitteePage() {
       {/* Tab-like Section Headers */}
       <section className="animate-slide-down">
         <div className="flex gap-4 justify-center">
-          <div className="px-8 py-3 rounded-xl blue-gradient-enhanced text-white font-semibold shadow-lg">
+          <div className="px-8 py-3 rounded-xl blue-gradient-enhanced text-foreground font-semibold shadow-lg">
             Committee Members
           </div>
-          <div className="px-8 py-3 rounded-xl glass-card text-white/70 font-semibold">
+          <div className="px-8 py-3 rounded-xl glass-card text-foreground/70 font-semibold">
             Executive Members
           </div>
         </div>
@@ -166,7 +166,7 @@ export default function CommitteePage() {
 
       {/* Executive Members */}
       <section className="animate-slide-up">
-        <h2 className="text-2xl font-bold text-white mb-6">Executive Board</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-6">Executive Board</h2>
         <div className="space-y-6">
           {executiveMembers.map((member) => (
             <GlassCard key={member.id} enhanced>
@@ -179,13 +179,13 @@ export default function CommitteePage() {
                 {/* Member Details */}
                 <div className="flex-1 min-w-0">
                   <div className="mb-3">
-                    <span className="inline-block px-3 py-1 rounded-lg blue-gradient text-white text-xs font-medium mb-2">
+                    <span className="inline-block px-3 py-1 rounded-lg blue-gradient text-foreground text-xs font-medium mb-2">
                       {member.position}
                     </span>
-                    <h3 className="text-2xl font-bold text-white mb-1">
+                    <h3 className="text-2xl font-bold text-foreground mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-white/60 text-sm">
+                    <p className="text-foreground/60 text-sm">
                       {member.studentId} • {member.batch}
                     </p>
                   </div>
@@ -193,17 +193,17 @@ export default function CommitteePage() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-primary-light">🎓</span>
-                      <span className="text-white/70">
+                      <span className="text-foreground/70">
                         {member.department} • {member.program}
                       </span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-primary-light">📧</span>
-                      <span className="text-white/70">{member.email}</span>
+                      <span className="text-foreground/70">{member.email}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-primary-light">📱</span>
-                      <span className="text-white/70">{member.phone}</span>
+                      <span className="text-foreground/70">{member.phone}</span>
                     </div>
                   </div>
                 </div>
@@ -215,7 +215,7 @@ export default function CommitteePage() {
 
       {/* General Committee Members */}
       <section className="animate-slide-up">
-        <h2 className="text-2xl font-bold text-white mb-6">Committee Members</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-6">Committee Members</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {generalMembers.map((member) => (
             <GlassCard key={member.id} className="hover:scale-[1.02] transition-transform duration-300">
@@ -228,13 +228,13 @@ export default function CommitteePage() {
                 {/* Member Details */}
                 <div className="flex-1 min-w-0">
                   <div className="mb-2">
-                    <span className="inline-block px-2 py-1 rounded-lg blue-gradient text-white text-xs font-medium mb-2">
+                    <span className="inline-block px-2 py-1 rounded-lg blue-gradient text-foreground text-xs font-medium mb-2">
                       {member.position}
                     </span>
-                    <h3 className="text-xl font-bold text-white mb-1">
+                    <h3 className="text-xl font-bold text-foreground mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-white/60 text-xs">
+                    <p className="text-foreground/60 text-xs">
                       {member.studentId}
                     </p>
                   </div>
@@ -242,13 +242,13 @@ export default function CommitteePage() {
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-xs">
                       <span className="text-primary-light">🎓</span>
-                      <span className="text-white/70">
+                      <span className="text-foreground/70">
                         {member.department} • {member.batch}
                       </span>
                     </div>
                     <div className="flex items-center gap-2 text-xs">
                       <span className="text-primary-light">📧</span>
-                      <span className="text-white/70 truncate">{member.email}</span>
+                      <span className="text-foreground/70 truncate">{member.email}</span>
                     </div>
                   </div>
                 </div>
@@ -261,10 +261,10 @@ export default function CommitteePage() {
       {/* CTA Section */}
       <section className="animate-scale-in">
         <GlassCard enhanced className="text-center py-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             Want to Contribute?
           </h2>
-          <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+          <p className="text-foreground/70 mb-8 max-w-2xl mx-auto">
             Join our committee and help shape the future of DIU CPC. We&#39;re always
             looking for passionate individuals to join our team.
           </p>
