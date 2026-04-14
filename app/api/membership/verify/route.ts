@@ -51,6 +51,8 @@ const SEARCH_HEADER_ALIASES = [
 ];
 
 const MEMBER_ID_HEADER_ALIASES = ['memberid', 'cpcmemberid'];
+const NAME_HEADER_ALIASES = ['name', 'fullname', 'studentname'];
+const EMAIL_HEADER_ALIASES = ['email', 'emailaddress'];
 
 function normalizeText(value: string): string {
   return value.trim().toLowerCase();
@@ -299,11 +301,15 @@ function getSearchColumnIndexes(headers: string[], columnCount: number): number[
   return Array.from({ length: columnCount }, (_, i) => i);
 }
 
-function getMemberIdColumnIndex(headers: string[]): number {
+function getColumnIndexByAliases(headers: string[], aliases: string[]): number {
   return headers.findIndex((header) => {
     const normalized = normalizeHeader(header);
-    return MEMBER_ID_HEADER_ALIASES.some((alias) => normalized.includes(alias));
+    return aliases.some((alias) => normalized.includes(alias));
   });
+}
+
+function getMemberIdColumnIndex(headers: string[]): number {
+  return getColumnIndexByAliases(headers, MEMBER_ID_HEADER_ALIASES);
 }
 
 export async function POST(request: NextRequest) {
@@ -338,6 +344,8 @@ export async function POST(request: NextRequest) {
     const columnCount = Math.max(headers.length, ...rows.map((row) => row.length));
     const searchableIndexes = getSearchColumnIndexes(headers, columnCount);
     const memberIdColumnIndex = getMemberIdColumnIndex(headers);
+    const nameColumnIndex = getColumnIndexByAliases(headers, NAME_HEADER_ALIASES);
+    const emailColumnIndex = getColumnIndexByAliases(headers, EMAIL_HEADER_ALIASES);
 
     for (let rowIndex = 1; rowIndex < rows.length; rowIndex += 1) {
       const row = rows[rowIndex] ?? [];
@@ -350,8 +358,10 @@ export async function POST(request: NextRequest) {
       if (matches) {
         const memberId =
           memberIdColumnIndex >= 0 ? (row[memberIdColumnIndex] ?? '').trim() || null : null;
+        const name = nameColumnIndex >= 0 ? (row[nameColumnIndex] ?? '').trim() || null : null;
+        const email = emailColumnIndex >= 0 ? (row[emailColumnIndex] ?? '').trim() || null : null;
 
-        return NextResponse.json({ found: true, memberId });
+        return NextResponse.json({ found: true, memberId, name, email });
       }
     }
 

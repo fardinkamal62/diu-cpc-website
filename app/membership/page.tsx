@@ -8,7 +8,11 @@ import { useState } from 'react';
 export default function Membership() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchStatus, setSearchStatus] = useState<'idle' | 'loading' | 'found' | 'not_found' | 'error'>('idle');
-  const [verifiedMemberId, setVerifiedMemberId] = useState<string | null>(null);
+  const [verifiedMemberDetails, setVerifiedMemberDetails] = useState<{
+    name: string | null;
+    email: string | null;
+    memberId: string | null;
+  } | null>(null);
 
   const trimmedQuery = searchQuery.trim();
   const isQueryValid = trimmedQuery.length >= 3;
@@ -18,7 +22,7 @@ export default function Membership() {
     if (!isQueryValid) return;
 
     setSearchStatus('loading');
-    setVerifiedMemberId(null);
+    setVerifiedMemberDetails(null);
     try {
       const response = await fetch('/api/membership/verify', {
         method: 'POST',
@@ -33,11 +37,25 @@ export default function Membership() {
         return;
       }
 
-      const data: { found: boolean; memberId?: string | null } = await response.json();
-      setVerifiedMemberId(data.found ? data.memberId ?? null : null);
+      const data: {
+        found: boolean;
+        memberId?: string | null;
+        name?: string | null;
+        email?: string | null;
+      } = await response.json();
+
+      setVerifiedMemberDetails(
+        data.found
+          ? {
+              memberId: data.memberId ?? null,
+              name: data.name ?? null,
+              email: data.email ?? null,
+            }
+          : null,
+      );
       setSearchStatus(data.found ? 'found' : 'not_found');
     } catch {
-      setVerifiedMemberId(null);
+      setVerifiedMemberDetails(null);
       setSearchStatus('error');
     }
   };
@@ -120,7 +138,7 @@ export default function Membership() {
                 value={searchQuery}
                 onChange={(e) => {
                   setSearchQuery(e.target.value);
-                  setVerifiedMemberId(null);
+                  setVerifiedMemberDetails(null);
                   if (searchStatus !== 'idle') setSearchStatus('idle');
                 }}
               />
@@ -131,7 +149,7 @@ export default function Membership() {
                   className="absolute inset-y-0 right-0 pr-3 flex items-center text-foreground/60 hover:text-foreground transition-colors"
                   onClick={() => {
                     setSearchQuery('');
-                    setVerifiedMemberId(null);
+                    setVerifiedMemberDetails(null);
                     setSearchStatus('idle');
                   }}
                 >
@@ -162,15 +180,24 @@ export default function Membership() {
               <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-xl flex items-start gap-4 animate-fade-in">
                 <LuCheck className="w-6 h-6 text-green-400 shrink-0 mt-0.5" />
                 <div>
-                  <h3 className="text-green-400 font-bold mb-1">Membership Verified</h3>
+                  <h3 id="membership-verified-title" className="text-green-400 font-bold mb-1">Membership Verified</h3>
                   <p className="text-foreground/80 text-sm">
                     A matching member record exists for <span className="font-semibold">{trimmedQuery}</span>.
                   </p>
-                  {verifiedMemberId && (
-                    <p className="text-foreground/90 text-sm mt-1">
-                      CPC Member ID: <span className="font-semibold">{verifiedMemberId}</span>
-                    </p>
-                  )}
+                  <dl aria-labelledby="membership-verified-title" className="mt-2 text-foreground/90 text-sm space-y-1">
+                    <div className="flex gap-2">
+                      <dt className="font-medium">Name:</dt>
+                      <dd className="font-semibold">{verifiedMemberDetails?.name || 'N/A'}</dd>
+                    </div>
+                    <div className="flex gap-2">
+                      <dt className="font-medium">Email:</dt>
+                      <dd className="font-semibold">{verifiedMemberDetails?.email || 'N/A'}</dd>
+                    </div>
+                    <div className="flex gap-2">
+                      <dt className="font-medium">CPC Member ID:</dt>
+                      <dd className="font-semibold">{verifiedMemberDetails?.memberId || 'N/A'}</dd>
+                    </div>
+                  </dl>
                 </div>
               </div>
             )}
