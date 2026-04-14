@@ -39,6 +39,27 @@ npm run build
 npm start
 ```
 
+## Membership Checker Integration (Google Sheets)
+
+The membership checker now verifies data through the server route `app/api/membership/verify/route.ts`, which reads from Google Sheets.
+
+1. Copy `.env.example` to `.env.local`.
+2. Set these variables:
+
+```bash
+GOOGLE_SHEETS_LINK="https://docs.google.com/spreadsheets/d/<YOUR_SHEET_ID>/edit"
+GOOGLE_SHEETS_RANGE="A:Z"
+GOOGLE_SERVICE_ACCOUNT_EMAIL="<SERVICE_ACCOUNT_EMAIL>"
+GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+```
+
+Notes:
+- You can use `GOOGLE_SHEETS_ID` instead of `GOOGLE_SHEETS_LINK`.
+- Share the sheet with `GOOGLE_SERVICE_ACCOUNT_EMAIL` as Viewer.
+- Keep newline characters escaped (`\n`) in `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY`.
+- Keep the first row in your sheet as column headers.
+- The API automatically tries to match values from common headers like phone/email/member id/registration.
+
 ## 🛠️ Technology Stack
 
 - **Framework**: Next.js 14+ with App Router
